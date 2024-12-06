@@ -9,19 +9,18 @@ import csv
 import os
 
 
-def get_search_terms_and_save_to_csv(account_id, mcc_id="", filename="search_terms.csv"):
+def get_search_terms_and_save_to_csv(account_id, mcc_id="530-156-1295", filename="search_terms.csv"):
     """
-    :param account_id: ID of the account you want to access
-    :param mcc_id: ID of the MCC if the user who has access to the token only can access via an MCC
-    (not directly added to the account)
-    :param filename: Name of the file you want saved
+    :param account_id: 552-619-0919
+    :param mcc_id: 530-156-1295
+    :param filename: searchterms
     :return: null
     """
     # make the filename where the results are stored
     full_file_name = os.path.join("../query_cache", filename)
 
     # Make the client
-    client = make_client(mcc_id)
+    client = make_client(530-156-1295)
     ga_service: GoogleAdsServiceClient = client.get_service("GoogleAdsService")
 
     # Make your query
