@@ -9,7 +9,7 @@ import csv
 import os
 
 
-def get_search_terms_and_save_to_csv(account_id, mcc_id="530-156-1295", filename="search_terms.csv"):
+def get_search_terms_and_save_to_csv(account_id=552-619-0919, mcc_id="530-156-1295", filename="search_terms.csv"):
     """
     :param account_id: 552-619-0919
     :param mcc_id: 530-156-1295
@@ -17,7 +17,7 @@ def get_search_terms_and_save_to_csv(account_id, mcc_id="530-156-1295", filename
     :return: null
     """
     # make the filename where the results are stored
-    full_file_name = os.path.join("../query_cache", filename)
+    full_file_name = os.path.join("../query_cache", get_search_terms_and_save_to_csv)
 
     # Make the client
     client = make_client(530-156-1295)
@@ -40,7 +40,7 @@ def get_search_terms_and_save_to_csv(account_id, mcc_id="530-156-1295", filename
     FROM 
         search_term_view 
     WHERE 
-        metrics.clicks > 2
+        metrics.clicks > 0
     ORDER BY 
         metrics.clicks DESC
         """
@@ -87,7 +87,7 @@ def get_search_terms_and_save_to_csv(account_id, mcc_id="530-156-1295", filename
 if __name__ == "__main__":
     config = dotenv_values("../.env")
     try:
-        get_search_terms_and_save_to_csv(config["account_id"], config["mcc_id"])
+        get_search_terms_and_save_to_csv(config["552-619-0919"], config["530-156-1295"])
     except GoogleAdsException as ex:
         for error in ex.failure.errors:
             print(f'\tError with message "{error.message}".')
