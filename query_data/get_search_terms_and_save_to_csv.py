@@ -49,7 +49,7 @@ def get_search_terms_and_save_to_csv(account_id=552-619-0919, mcc_id="530-156-12
     search_request = client.get_type("SearchGoogleAdsStreamRequest")
 
     # Set the account ID
-    search_request.customer_id = account_id
+    search_request.customer_id = 552-619-0919
 
     # Set the query to the search_request
     search_request.query = query
